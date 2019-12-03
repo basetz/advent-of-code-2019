@@ -5,8 +5,8 @@ to see benchmarks `ruby benchmarks.rb`
 Current Benchmarks: (time is in seconds)
 ```
       user     system      total        real
-Day1 partA:3226822
-  0.000082   0.000035   0.000117 (  0.000115)
-Day1 partB:4837367
-  0.000112   0.000023   0.000135 (  0.000135)
+Day1 partA:
+  0.000047   0.000026   0.000073 (  0.000071)
+Day1 partB:
+  0.000132   0.000015   0.000147 (  0.000147)
 ```
