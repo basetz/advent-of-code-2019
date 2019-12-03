@@ -21,7 +21,7 @@ FILEPATH = "day_01/input.txt"
 
 def solution_01_a
   fuel = File.open(FILEPATH).map(&:strip)
-  puts fuel.map{|mass| (mass.to_i / 3 - 2)}.inject(:+)
+  fuel.map{|mass| (mass.to_i / 3 - 2)}.inject(:+)
 end
 
 # So, for each module mass, calculate its fuel and add it to the total. Then, treat the fuel amount you just calculated as the input mass and repeat the process, continuing until a fuel requirement is zero or negative. For example:
@@ -45,5 +45,5 @@ end
 
 def solution_01_b
   fuel = File.open(FILEPATH).map(&:strip)
-  puts fuel.map{|mass| recursiveMass(mass) }.inject(:+)
+  fuel.map{|mass| recursiveMass(mass) }.inject(:+)
 end
