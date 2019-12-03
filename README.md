@@ -1,4 +1,4 @@
-These are my solutions to the AOC 2019 puzzles.
+These are my solutions to the AOC 2019 puzzles in Ruby.
 
 to see benchmarks `ruby benchmarks.rb`
 
