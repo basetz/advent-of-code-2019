@@ -1,6 +1,8 @@
 #!/usr/bin/env ruby
 
-# Fuel required to launch a given module is based on its mass. Specifically, to find the fuel required for a module, take its mass, divide by three, round down, and subtract 2.
+# Fuel required to launch a given module is based on its mass.
+# Specifically, to find the fuel required for a module,
+# #take its mass, divide by three, round down, and subtract 2.
 
 # For example:
 
@@ -14,9 +16,7 @@
 
 # What is the sum of the fuel requirements for all of the modules on your spacecraft?
 
-def solution_01
-  fuel = File.open("./input.txt").map(&:strip)
-  puts fuel
+def solution_01_a
+  fuel = File.open("day_01/input.txt").map(&:strip)
+  fuel.map{|mass| (mass.to_i / 3 - 2)}.inject(:+)
 end
-
-solution_01
