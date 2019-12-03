@@ -47,6 +47,3 @@ def solution_01_b
   fuel = File.open(FILEPATH).map(&:strip)
   puts fuel.map{|mass| recursiveMass(mass) }.inject(:+)
 end
-
-solution_01_a
-solution_01_b
