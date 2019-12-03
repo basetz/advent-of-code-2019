@@ -2,7 +2,7 @@ These are my solutions to the AOC 2019 puzzles.
 
 to see benchmarks `ruby benchmarks.rb`
 
-Current Benchmarks:
+Current Benchmarks: (time is in seconds)
 ```
       user     system      total        real
 Day1 partA:3226822
