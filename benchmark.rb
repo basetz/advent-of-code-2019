@@ -7,6 +7,7 @@ def benchmarks
     x.report("Day1 partA:\n") { solution_01_a }
     x.report("Day1 partB:\n") { solution_01_b }
     x.report("Day2 partA:\n") { solution_02_a }
+    x.report("Day2 partB:\n") { solution_02_b }
   end
 end
 

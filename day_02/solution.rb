@@ -1,32 +1,40 @@
 #!/usr/bin/env ruby
 
-# FILEPATH = "./input-edit.txt"
-FILEPATH = "day_02/input-edit.txt"
+# FILEPATH = "./input.txt"
+FILEPATH = "day_02/input.txt"
 
 def isvalid(value)
-  return [1, 2, 99].include?value
+  [1, 2, 99].include?value
 end
 
 def not99(value)
-  return value != 99
+  value != 99
 end
 
 def isAdd(value)
-  return value == 1
+  value == 1
 end
 
-def solve(opValue, val1, val2)
+def evalCode(opValue, val1, val2)
   # p "TEST: [#{opValue}, #{val1}, #{val2}]"
   if isAdd(opValue)
-    return val1 + val2
+   val1 + val2
   else
-    return val1 * val2
+    val1 * val2
   end
 end
 
 def solution_02_a
-  reference = File.open(FILEPATH).map(&:strip)[0].split(',').map{|x| x.to_i}
+  solve(FILEPATH, 12, 2)
+end
+
+def solve(filepath, noun=nil, verb=nil)
+  reference = File.open(filepath).map(&:strip)[0].split(',').map{|x| x.to_i}
   index = 0
+
+  reference[1] = noun if noun
+  reference[2] = verb if verb
+
   # puts "START"
   # puts reference.join(',')
   while reference.length >= index + 3
@@ -36,7 +44,7 @@ def solution_02_a
       val2 = reference[reference[index+2]]
       saveTo = reference[index+3]
 
-      reference[saveTo] = solve(opValue, val1, val2)
+      reference[saveTo] = evalCode(opValue, val1, val2)
     else
       break
     end
@@ -45,7 +53,25 @@ def solution_02_a
   # puts "END"
   # puts reference.join(',')
   # puts reference[0]
-  reference[0]
+  reference[0].to_i
 end
 
-solution_02_a
+def solution_02_b
+  x=0
+  y=0
+  maxVal = 99
+  while(x < 100)
+    while (y < 100)
+      break if solve(FILEPATH, x, y) == 19690720
+      y+=1
+    end
+    break if(y != 100)
+    y=0 if(y==100)
+    x+=1
+  end
+  # puts "Noun:#{x}, Verb:#{y}"
+  # puts "100 * noun + verb = #{100 * x + y}"
+end
+
+# solution_02_a
+# solution_02_b
