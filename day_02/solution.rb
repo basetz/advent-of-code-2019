@@ -25,11 +25,11 @@ def evalCode(opValue, val1, val2)
 end
 
 def solution_02_a
-  solve(FILEPATH, 12, 2)
+  reference = File.open(FILEPATH).map(&:strip)[0].split(',').map{|x| x.to_i}
+  solve(reference, 12, 2)
 end
 
-def solve(filepath, noun=nil, verb=nil)
-  reference = File.open(filepath).map(&:strip)[0].split(',').map{|x| x.to_i}
+def solve(reference, noun=nil, verb=nil)
   index = 0
 
   reference[1] = noun if noun
@@ -60,9 +60,10 @@ def solution_02_b
   x=0
   y=0
   maxVal = 99
+  reference = File.open(FILEPATH).map(&:strip)[0].split(',').map{|x| x.to_i}
   while(x < 100)
     while (y < 100)
-      break if solve(FILEPATH, x, y) == 19690720
+      break if solve(reference.dup, x, y) == 19690720
       y+=1
     end
     break if(y != 100)
